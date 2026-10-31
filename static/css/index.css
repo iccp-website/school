@@ -1,0 +1,391 @@
+:root {
+  /* custom colors */
+  --bg-grey: #e0e0e0;
+  --bg-red: #ffe6e6;
+  --bg-blue: #E6FFFF;
+  --bg-green: #F3FFE6;
+  --bg-purple: #F3E6FF;
+}
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+nav > .hero-body {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+#content {
+	display: block;
+	padding: 20px;
+	min-height: 300px;
+}
+
+.active-button {
+  background-color: var(--bg-grey);
+}
+
+a.button:hover {
+  background-color: #f5f5f5 !important;
+}
+
+.section {
+	margin: 6rem auto;
+	padding: 0;
+}
+
+.subsection {
+	margin: 1.5rem 0;
+}
+
+.sponsors-grid {
+  justify-content: center;
+}
+
+.sponsor-card {
+  height: 234px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.sponsor-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.course > h4 {
+  margin: 0 0 1rem 0;
+  padding: 0;
+}
+
+.course > h4.instructor {
+  float: right;
+}
+
+.content .course > figure.course-image {
+  float: right;
+  margin: 0 0 1rem 1rem;
+  padding: 0;
+  width: 30%;
+}
+
+.course > figure > img {
+  border: 0.1em solid black;
+  border-radius: 6px;
+}
+
+.photo-gallery-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+	grid-auto-flow: dense;
+	gap: 8px;
+}
+
+.photo-gallery-grid figure {
+	position: relative;
+	margin: 0;
+	aspect-ratio: 1 / 1;
+	overflow: hidden;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+/* Bulma's .content figure:not(:first-child)/:not(:last-child) rules add
+   2em top/bottom margin that otherwise breaks row alignment in the grid. */
+.photo-gallery-grid figure:not(:first-child) {
+	margin-top: 0;
+}
+
+.photo-gallery-grid figure:not(:last-child) {
+	margin-bottom: 0;
+}
+
+.photo-gallery-grid img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.photo-gallery-grid figure:hover img,
+.photo-gallery-grid figure:focus-visible img {
+	transform: scale(1.08);
+	filter: brightness(0.85);
+}
+
+#photo-modal .modal-content {
+	max-width: 90vw;
+	width: fit-content;
+	text-align: left;
+}
+
+#photo-modal .modal-content img {
+	max-width: 90vw;
+	max-height: 80vh;
+	border-radius: 6px;
+	display: block;
+}
+
+#photo-modal .photo-modal-caption {
+	margin-top: 0.75rem;
+	font-size: 1.1rem;
+	color: white;
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+#photo-modal .photo-modal-caption span {
+	opacity: 0.8;
+}
+
+.modal-nav {
+	position: fixed;
+	top: 50%;
+	transform: translateY(-50%);
+	background: rgba(0, 0, 0, 0.4);
+	color: white;
+	border: none;
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+	font-size: 1.5rem;
+	line-height: 1;
+	cursor: pointer;
+	z-index: 40;
+	transition: background 0.15s ease;
+}
+
+.modal-nav:hover {
+	background: rgba(0, 0, 0, 0.7);
+}
+
+.modal-nav-prev {
+	left: 1.5rem;
+}
+
+.modal-nav-next {
+	right: 1.5rem;
+}
+
+/* ------------------------------------------------------------------ */
+/* Summer school additions                                             */
+/* ------------------------------------------------------------------ */
+
+/* Header and footer wordmarks. Widths keep "ICCP" as tall as on the conference
+   sites (their 1160-unit-wide logo uses max-width 65vh; ours is 1599 units).
+   Phones get the compact lockup through <picture> (see index.html). */
+.hero-logo {
+	display: block;
+	width: 100%;
+	height: auto;
+	max-width: 90vh;
+	margin-bottom: 1vh;
+	filter: drop-shadow(0 0 2px #4e4e4e);
+}
+
+.hero-subtitle {
+	font-size: 1.5rem;
+	color: #fff;
+	text-shadow: 0 0 10px #000, 0 0 4px #000;
+	margin-top: 0.5rem;
+}
+
+.footer-logo-picture {
+	display: block;
+	width: 100%;
+}
+
+.footer-logo {
+	display: block;
+	width: 100%;
+	height: auto;
+	max-width: 69vh;
+	margin: 0 auto 10px auto;
+}
+
+@media screen and (max-width: 768px) {
+	.hero-logo {
+		max-width: 420px;
+	}
+
+	.hero-subtitle {
+		font-size: 1.15rem;
+	}
+
+	.footer-logo {
+		max-width: 300px;
+	}
+}
+
+/* Deep links (#page/anchor) land with a little breathing room. */
+#content [id] {
+	scroll-margin-top: 1rem;
+}
+
+/* Home: side box, same look as the conference "Announcements" box. */
+.side-box {
+	align-self: flex-start;
+	background: rgba(255, 255, 255, 0.9);
+	padding: 1.5vh;
+	border-radius: 8px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.content .side-box h2 {
+	font-size: 1.75rem;
+	margin-bottom: 1vh;
+	color: #333;
+}
+
+.glance-stats {
+	display: flex;
+	justify-content: space-around;
+	text-align: center;
+	margin: 0.5rem 0 1rem 0;
+}
+
+.glance-stats .stat-number {
+	display: block;
+	font-size: 2.5rem;
+	font-weight: 700;
+	line-height: 1.1;
+	color: #333;
+}
+
+.glance-stats .stat-label {
+	display: block;
+	font-size: 0.8rem;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	color: #555;
+}
+
+/* Home: one card per edition. */
+.edition-card {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.edition-card .card-image img {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+}
+
+.edition-card .card-content {
+	flex: 1;
+}
+
+.content .edition-card .title {
+	margin-bottom: 0.5rem;
+}
+
+.edition-card .edition-meta {
+	color: #555;
+}
+
+.content .edition-card ul {
+	margin-top: 0.25rem;
+}
+
+/* Courses: overview table. */
+.course-table td.offered {
+	text-align: center;
+	font-size: 1.1rem;
+	line-height: 1.2;
+}
+
+.course-table th.year {
+	text-align: center;
+	width: 4.5rem;
+}
+
+.course-table td,
+.course-table th {
+	vertical-align: middle;
+}
+
+/* Courses: cards keep their floated figure inside the box. */
+.box.course {
+	display: flow-root;
+}
+
+.course-footer {
+	clear: both;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem 1rem;
+	margin-top: 1rem;
+	padding-top: 0.75rem;
+	border-top: 1px solid #ededed;
+}
+
+.course-footer .course-years {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.4rem;
+}
+
+.course-footer .course-years-label {
+	color: #555;
+	font-size: 0.9rem;
+}
+
+/* Photos: a few tiles per year are shown at 2x2. */
+.photo-gallery-grid figure.is-featured {
+	grid-column: span 2;
+	grid-row: span 2;
+}
+
+/* Phones: stack course cards (title, instructor, image, text), and use
+   ragged-right text, since justified text leaves large gaps in narrow columns. */
+@media screen and (max-width: 768px) {
+	.content .has-text-justified {
+		text-align: left !important;
+	}
+
+	.box.course {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.course > h4:not(.instructor) {
+		order: -1;
+	}
+
+	.course > h4.instructor {
+		float: none;
+	}
+
+	.content .course > figure.course-image {
+		float: none;
+		width: 100%;
+		max-width: 400px;
+		margin: 0 0 1rem 0;
+	}
+
+	.modal-nav-prev {
+		left: 0.5rem;
+	}
+
+	.modal-nav-next {
+		right: 0.5rem;
+	}
+}
