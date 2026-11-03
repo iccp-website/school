@@ -201,6 +201,12 @@ a.button:hover {
 	margin-top: 0.5rem;
 }
 
+/* Footer heading: an h2 for document structure, sized like Bulma's .content h4 */
+.footer .footer-heading {
+	font-size: 1.25em;
+	margin-bottom: 0.8em;
+}
+
 .footer-logo-picture {
 	display: block;
 	width: 100%;
