@@ -202,7 +202,7 @@ def main() -> int:
                 if path and not exists_exact_case(path):
                     problems.append(f"{where}: {attr}='{value}' does not exist (check capitalization)")
         for a, line in doc.imgs:
-            if not a.get("src"):
+            if not a.get("src") or a["src"].startswith("data:"):
                 continue
             missing = [k for k in ("alt", "width", "height") if a.get(k) is None]
             if missing:
