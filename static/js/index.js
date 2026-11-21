@@ -9,7 +9,7 @@
  */
 
 var SITE_TITLE = 'ICCP Summer School on Computational Imaging';
-var PAGE_TITLES = { courses: 'Courses', photos: 'Photos', sponsors: 'Sponsors' };
+var PAGE_TITLES = { courses: 'Courses', photos: 'Photos', testimonials: 'Testimonials', sponsors: 'Sponsors' };
 
 var currentPage = null;
 var loadToken = 0;
