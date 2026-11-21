@@ -494,6 +494,13 @@ a.button:hover {
 		float: none;
 	}
 
+	/* Four edition links (Photos, Testimonials, Sponsors, ICCP) must fit one row. */
+	.edition-card .card-footer-item {
+		padding: 0.75rem 0.25rem;
+		font-size: 0.9rem;
+		white-space: nowrap;
+	}
+
 	.content .course > figure.course-image {
 		float: none;
 		width: 100%;
